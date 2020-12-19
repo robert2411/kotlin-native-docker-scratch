@@ -29,5 +29,14 @@ kotlin {
     sourceSets {
         val nativeMain by getting
         val nativeTest by getting
+        commonMain {
+            dependencies {
+                val ktor_version = "1.4.1"
+                val kotlinx_coroutines_version = "1.3.9-native-mt"
+                implementation ("io.ktor:ktor-client-curl:$ktor_version")
+                implementation ("io.ktor:ktor-client-core:$ktor_version")
+                implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version")
+            }
+        }
     }
 }
